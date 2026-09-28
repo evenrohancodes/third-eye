@@ -27,9 +27,13 @@ android.permissions = INTERNET,ACCESS_NETWORK_STATE,FOREGROUND_SERVICE,POST_NOTI
 android.minapi = 24
 android.api = 33
 android.ndk_api = 24
-android.archs = arm64-v8a,armeabi-v7a
+# Single arch for now to keep first CI build fast; add armeabi-v7a later for older devices if needed
+android.archs = arm64-v8a
 
 android.allow_backup = True
+
+# Accept Android SDK licenses non-interactively (required for CI builds)
+android.accept_sdk_license = True
 
 [buildozer]
 
