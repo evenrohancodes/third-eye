@@ -31,6 +31,11 @@ android.permissions = INTERNET,ACCESS_NETWORK_STATE,FOREGROUND_SERVICE,POST_NOTI
 android.minapi = 24
 android.api = 33
 android.ndk_api = 24
+# Pin an older NDK -- newer NDKs (e.g. r28c) ship stricter/changed OpenGL ES
+# headers that don't match the GL function pointer types Kivy 2.3.0's
+# generated cgl_gl.c expects, causing a fatal "incompatible function pointer
+# types" compile error on glShaderSource et al.
+android.ndk = 25b
 # Single arch for now to keep first CI build fast; add armeabi-v7a later for older devices if needed
 android.archs = arm64-v8a
 
