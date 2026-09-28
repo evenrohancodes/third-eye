@@ -10,7 +10,9 @@ source.include_patterns = assets/*
 
 version = 1.0
 
-requirements = python3,kivy==2.3.0,requests,urllib3,certifi,charset_normalizer,idna,pyjnius
+# Pin python3 to 3.11 -- newer python-for-android defaults to 3.14, whose
+# changed C API breaks Kivy 2.3.0's Cython-generated bindings.
+requirements = python3==3.11.6,kivy==2.3.0,requests,urllib3,certifi,charset_normalizer,idna,pyjnius
 
 # Bundle the alert sound into the APK's res/raw so a native NotificationChannel
 # can reference it as android.resource://<package>/raw/alert
