@@ -18,7 +18,7 @@ requirements = hostpython3==3.11.6,python3==3.11.6,kivy==2.3.0,requests,urllib3,
 
 # Bundle the alert sound into the APK's res/raw so a native NotificationChannel
 # can reference it as android.resource://<package>/raw/alert
-android.add_resources = assets/alert.wav:raw:alert
+android.add_resources = assets/alert.wav:raw/alert
 
 # service_name:entry_point.py:foreground
 services = thirdeye:service.py:foreground
